@@ -9,18 +9,19 @@ import com.example.sephoraapptestapplication.network.Constants
 import com.example.sephoraapptestapplication.network.ResponseWrapper
 import javax.inject.Inject
 
-class DataRepository @Inject constructor(val service: ApiInterface): BaseRepository() {
+class DataRepository @Inject constructor(val service: ApiInterface) : BaseRepository() {
     fun fetchRepositoryData(
         apiResponse: MutableLiveData<ResponseWrapper>,
         serviceID: String,
-        request:Any?
+        request: Any?
     ) {
         this.apiResponse = apiResponse
 
         networkCall(
             Constants.ApiMethod.GET_METHOD,
             Constants.REPOSITORIES_URL, request, serviceID,
-            FetchRepositoryResponse::class.java)
+            FetchRepositoryResponse::class.java
+        )
     }
 
     override fun handleResponse(responseObj: ResponseWrapper) {

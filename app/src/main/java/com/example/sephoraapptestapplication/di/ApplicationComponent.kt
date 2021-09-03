@@ -1,4 +1,5 @@
 package com.example.sephoraapptestapplication.di
+
 import android.app.Application
 import com.example.sephoraapptestapplication.baseclasses.BaseApplication
 import com.example.sephoraapptestapplication.di.modules.ActivityBindingModule

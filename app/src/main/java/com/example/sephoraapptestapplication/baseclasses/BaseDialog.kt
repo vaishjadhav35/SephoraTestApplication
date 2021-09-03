@@ -8,7 +8,7 @@ import android.view.Window
 import android.view.WindowManager
 import com.example.sephoraapptestapplication.R
 
-class BaseDialog (context: Context, isCancellable: Boolean = true) :
+class BaseDialog(context: Context, isCancellable: Boolean = true) :
     Dialog(context, R.style.ThemeOverlay_AppCompat_Dialog_Alert) {
 
     private var isCancellable = isCancellable

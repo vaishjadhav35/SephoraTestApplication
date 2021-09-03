@@ -1,6 +1,5 @@
 package com.example.sephoraapptestapplication.baseclasses
 
-import android.content.Intent
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -12,13 +11,6 @@ import java.net.UnknownHostException
 abstract class BaseActivity : DaggerAppCompatActivity() {
 
     var progressDialog: BaseDialog? = null
-
-
-    fun startNewActivity(className: Class<*>) {
-        val intent = Intent(this, className)
-        startActivity(intent)
-    }
-
 
     fun showProgressDialog(message: String) {
         getProgressDialogInstance()?.let {

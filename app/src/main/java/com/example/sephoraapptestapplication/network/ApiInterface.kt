@@ -2,7 +2,8 @@ package com.example.sephoraapptestapplication.network
 
 import com.example.sephoraapptestapplication.network.Constants.ApiMethod.Companion.GET_METHOD
 import io.reactivex.Observable
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Url
 
 interface ApiInterface {
     @GET

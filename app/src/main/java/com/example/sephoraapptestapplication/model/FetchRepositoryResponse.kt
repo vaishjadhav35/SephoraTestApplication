@@ -2,9 +2,9 @@ package com.example.sephoraapptestapplication.model
 
 import com.google.gson.annotations.SerializedName
 
-data class FetchRepositoryResponse (
+data class FetchRepositoryResponse(
     @SerializedName("included")
-    val included : ArrayList<Included>
+    val included: ArrayList<Included>
 )
 
 data class FetchRepositoryApiResponse(

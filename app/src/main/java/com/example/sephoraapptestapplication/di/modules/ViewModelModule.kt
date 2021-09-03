@@ -1,4 +1,4 @@
-package com.example.sephoraapptestapplication.di.modules;
+package com.example.sephoraapptestapplication.di.modules
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

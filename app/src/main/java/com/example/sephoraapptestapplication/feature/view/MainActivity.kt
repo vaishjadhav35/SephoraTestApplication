@@ -1,4 +1,5 @@
 package com.example.sephoraapptestapplication.feature.view
+
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -16,17 +17,21 @@ class MainActivity : BaseActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    lateinit var  dataListAdapter:DataListAdapter
+    lateinit var dataListAdapter: DataListAdapter
 
     private val dataViewModel by lazy {
-        ViewModelProvider(this,viewModelFactory).get(DataViewModel::class.java)
+        ViewModelProvider(this, viewModelFactory).get(DataViewModel::class.java)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         if (!dataViewModel.apiResponse.hasObservers()) observeApiResponse()
-        if (!dataViewModel.getErrorResponse().hasObservers()) observeErrorResponse(dataViewModel,recyclerView)
+        if (!dataViewModel.getErrorResponse().hasObservers()) observeErrorResponse(
+            dataViewModel,
+            recyclerView
+        )
         showProgressDialog("Loading...")
         dataViewModel.fetchRepositoryDetailsApi()
     }
@@ -39,15 +44,15 @@ class MainActivity : BaseActivity() {
             } else {
                 when (apiResponse.serviceID) {
                     REPOSITORIES_SERVICE_ID -> {
-                        if(apiResponse.result!=null){
-                         var data=   apiResponse.result as FetchRepositoryResponse
-                            var repositoryArrayList= data.included
-                            dataListAdapter=DataListAdapter(this,repositoryArrayList)
+                        if (apiResponse.result != null) {
+                            var data = apiResponse.result as FetchRepositoryResponse
+                            var repositoryArrayList = data.included
+                            dataListAdapter = DataListAdapter(this, repositoryArrayList)
                             recyclerView.apply {
                                 layoutManager = LinearLayoutManager(context)
                                 adapter = dataListAdapter
                             }
-                            recyclerView.adapter=dataListAdapter
+                            recyclerView.adapter = dataListAdapter
                             dataListAdapter.notifyDataSetChanged()
                         }
 

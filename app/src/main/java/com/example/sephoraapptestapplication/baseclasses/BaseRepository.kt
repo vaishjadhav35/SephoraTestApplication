@@ -46,7 +46,12 @@ abstract class BaseRepository {
 
                 override fun onError(error: Throwable) {
                     val errors =
-                        com.example.sephoraapptestapplication.network.Error(404, serviceID, error, "error")
+                        com.example.sephoraapptestapplication.network.Error(
+                            404,
+                            serviceID,
+                            error,
+                            "error"
+                        )
                     errorResponse.value = errors
                     handleError(error)
                 }

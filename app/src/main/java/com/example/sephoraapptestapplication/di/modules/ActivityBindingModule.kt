@@ -7,6 +7,6 @@ import dagger.android.ContributesAndroidInjector
 @Module
 open abstract class ActivityBindingModule {
     @ContributesAndroidInjector(modules = [FragmentBindingModule::class])
-    abstract fun dashboardActivity(): MainActivity
+    abstract fun mainActivity(): MainActivity
 
 }

@@ -2,11 +2,11 @@ package com.example.sephoraapptestapplication.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Included (
+data class Included(
     @SerializedName("type")
-    val type : String,
+    val type: String,
     @SerializedName("id")
-    val id : Int,
+    val id: Int,
     @SerializedName("attributes")
-    val attributes : Attributes
-    )
+    val attributes: Attributes
+)
